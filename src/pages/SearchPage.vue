@@ -1,5 +1,6 @@
 <template>
 	<v-app>
+		page: {{ $route.params.id }}
 		<div class="inner pa-4">
 			<v-text-field
 				label="Search all of npm"
@@ -25,6 +26,7 @@
 				v-model="page"
 				:length="pages"
 				:total-visible="5"
+				@input="paginationHandle"
 			></v-pagination>
 		</div>
 
@@ -70,7 +72,7 @@ export default {
 			packages: [],
 
 			isLoading: true,
-			page: 1,
+			page: Number(this.$route.params.id),
 			pages: null,
 			query: '',
 
@@ -84,10 +86,9 @@ export default {
 			fetching({
 				query: this.query,
 				requestOptions: {
-					page: this.page - 1,
+					page: this.$route.params.id - 1,
 				}
 			}).then((data) => {
-				console.log('data: ', data);
 				this.packages = data.hits;
 				this.pages = data.nbPages;
 			})
@@ -96,6 +97,10 @@ export default {
 		dialogHandle(dialogPackage) {
 			this.dialogPackage = dialogPackage;
 			this.dialog = true;
+		},
+
+		paginationHandle() {
+			this.$router.push({ path: `/page/${this.page}` })
 		}
 	},
 

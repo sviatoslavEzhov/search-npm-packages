@@ -6,6 +6,10 @@ Vue.use(VueRouter)
 const routes = [
 	{
 		path: '/',
+		redirect: '/page/1'
+	},
+	{
+		path: '/page/:id',
 		component: SearchPage
 	}
 ]
