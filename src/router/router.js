@@ -9,6 +9,10 @@ const routes = [
 		redirect: '/page/1'
 	},
 	{
+		path: '/page',
+		redirect: '/page/1'
+	},
+	{
 		path: '/page/:id',
 		component: SearchPage
 	}
