@@ -1,13 +1,10 @@
 import Vue from 'vue'
-import App from './App.vue'
-import InstantSearch from 'vue-instantsearch'
-import vuetify from './plugins/vuetify'
-
-Vue.use(InstantSearch)
-
-Vue.config.productionTip = false
+import router from '@/router/router'
+import App from '@/App.vue'
+import vuetify from '@/plugins/vuetify'
 
 new Vue({
   vuetify,
+  router,
   render: h => h(App)
 }).$mount('#app')
