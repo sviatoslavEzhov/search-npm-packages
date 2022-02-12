@@ -69,10 +69,10 @@
 					</v-card-text>
 
 					<v-card-text class="pa-4">
-						<div class="text">Homepage:
+						<div class="text" v-if="dialogPackage.homepage">Homepage:
 							<a :href="dialogPackage.homepage" target="_blank" rel="noopener noreferrer nofollow">{{ dialogPackage.homepage }}</a>
 						</div>
-						<div class="text">Repository:
+						<div class="text" v-if="dialogPackage.repository">Repository:
 							<a :href="dialogPackage.repository.url" target="_blank" rel="noopener noreferrer nofollow">{{ dialogPackage.repository.url }}</a>
 						</div>
 						<div class="text">Monthly Downloads: {{ dialogPackage.downloadsLast30Days }}</div>
