@@ -9,7 +9,7 @@ const index = client.initIndex(INDEX);
 
 const defaultOptions = {
   page: 0,
-  hitsPerPage: 11
+  hitsPerPage: 10
 }
 
 // TODO add URL params
