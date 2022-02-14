@@ -13,11 +13,11 @@ const defaultOptions = {
 }
 
 // TODO add URL params
-const fetching = async (params) => {
+const search = async (params) => {
   const query = params?.query ?? '';
   const requestOptions = {...defaultOptions, ...params?.requestOptions };
 
   return index.search(query, requestOptions).then((data) => data);
 }
 
-export { fetching }
+export { search }
